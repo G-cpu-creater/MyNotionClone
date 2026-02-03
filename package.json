@@ -1,0 +1,45 @@
+{
+  "name": "myclonenotion",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "next": "^14.2.0",
+    "@yoopta/editor": "^4.0.0",
+    "@yoopta/action-menu-list": "^4.0.0",
+    "@yoopta/blockquote": "^4.0.0",
+    "@yoopta/callout": "^4.0.0",
+    "@yoopta/code": "^4.0.0",
+    "@yoopta/embed": "^4.0.0",
+    "@yoopta/file": "^4.0.0",
+    "@yoopta/headings": "^4.0.0",
+    "@yoopta/image": "^4.0.0",
+    "@yoopta/link": "^4.0.0",
+    "@yoopta/lists": "^4.0.0",
+    "@yoopta/marks": "^4.0.0",
+    "@yoopta/paragraph": "^4.0.0",
+    "@yoopta/toolbar": "^4.0.0",
+    "@yoopta/video": "^4.0.0",
+    "zustand": "^4.5.2",
+    "lucide-react": "^0.344.0",
+    "nanoid": "^5.0.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0"
+  }
+}
