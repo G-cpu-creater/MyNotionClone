@@ -7,7 +7,7 @@ import Code from '@yoopta/code';
 import { HeadingOne, HeadingTwo, HeadingThree } from '@yoopta/headings';
 import { BulletedList, NumberedList, TodoList } from '@yoopta/lists';
 import { Bold, Italic, CodeMark, Underline, Strike } from '@yoopta/marks';
-import LinkTool, { DefaultLinkToolRender } from '@yoopta/link-tool';
+import Link from '@yoopta/link';
 import ActionMenuList, { DefaultActionMenuRender } from '@yoopta/action-menu-list';
 import Toolbar, { DefaultToolbarRender } from '@yoopta/toolbar';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -24,6 +24,7 @@ const plugins = [
   HeadingThree,
   Blockquote,
   Code,
+  Link,
   BulletedList,
   NumberedList,
   TodoList,
@@ -39,10 +40,6 @@ const TOOLS = {
   Toolbar: {
     render: DefaultToolbarRender,
     tool: Toolbar,
-  },
-  LinkTool: {
-    render: DefaultLinkToolRender,
-    tool: LinkTool,
   },
 };
 
