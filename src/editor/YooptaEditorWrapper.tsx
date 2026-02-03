@@ -8,6 +8,11 @@ import { HeadingOne, HeadingTwo, HeadingThree } from '@yoopta/headings';
 import { BulletedList, NumberedList, TodoList } from '@yoopta/lists';
 import { Bold, Italic, CodeMark, Underline, Strike } from '@yoopta/marks';
 import Link from '@yoopta/link';
+import Image from '@yoopta/image';
+import File from '@yoopta/file';
+import Video from '@yoopta/video';
+import Embed from '@yoopta/embed';
+import Callout from '@yoopta/callout';
 import ActionMenuList, { DefaultActionMenuRender } from '@yoopta/action-menu-list';
 import Toolbar, { DefaultToolbarRender } from '@yoopta/toolbar';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -23,8 +28,40 @@ const plugins = [
   HeadingTwo,
   HeadingThree,
   Blockquote,
+  Callout,
   Code,
   Link,
+  Image.extend({
+    options: {
+      async onUpload(file) {
+        const data = await new Promise<string>((resolve) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result as string);
+          reader.readAsDataURL(file);
+        });
+        return { src: data };
+      },
+    },
+  }),
+  File.extend({
+    options: {
+      async onUpload(file) {
+        return {
+          src: URL.createObjectURL(file),
+          name: file.name,
+          size: file.size,
+        };
+      },
+    },
+  }),
+  Video.extend({
+    options: {
+      async onUpload(file) {
+        return { src: URL.createObjectURL(file) };
+      },
+    },
+  }),
+  Embed,
   BulletedList,
   NumberedList,
   TodoList,
